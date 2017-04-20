@@ -1,0 +1,10 @@
+<input name={{name}}
+       type="radio"
+       disabled={{if disabled "disabled"}}
+       class="hidden"
+       checked={{if checked "checked"}} />
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <label></label>
+{{/if}}

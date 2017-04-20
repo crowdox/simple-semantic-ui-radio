@@ -1,0 +1,9 @@
+{
+  "name": "simple-semantic-ui-radio",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-promise-tools": "^1.0.0"
+  }
+}
