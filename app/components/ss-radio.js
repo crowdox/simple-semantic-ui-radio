@@ -1,23 +1,26 @@
+import { computed } from '@ember/object';
+import { isBlank } from '@ember/utils';
+import Component from '@ember/component';
 import Ember from 'ember';
 import isPromise from 'ember-promise-tools/utils/is-promise';
 import isFulfilled from 'ember-promise-tools/utils/is-fulfilled';
 import getPromiseContent from 'ember-promise-tools/utils/get-promise-content';
 import PromiseResolver from 'ember-promise-tools/mixins/promise-resolver';
 
-export default Ember.Component.extend(PromiseResolver, {
+export default Component.extend(PromiseResolver, {
   classNames: ['ui', 'checkbox', 'radio'],
   classNameBindings: ['checked:checked', 'readonly:read-only'],
 
   init() {
     this._super(...arguments);
 
-    if (Ember.isBlank(this.get('name'))) {
+    if (isBlank(this.get('name'))) {
       this.set('name', 'default');
       Ember.Logger.warn("The required component parameter of 'name' was not passed into the ss-radio component");
     }
   },
 
-  checked: Ember.computed('value', 'current', function() {
+  checked: computed('value', 'current', function() {
     let value = this._getValue('value');
     let current = this._getValue('current');
     if (value === current) {
