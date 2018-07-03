@@ -29,7 +29,7 @@ export default Ember.Component.extend(PromiseResolver, {
     return false;
   }),
 
-  click(event) {
+  click() {
     if (this.get('disabled') || this.get('readonly')) {
       return;
     }
