@@ -464,7 +464,7 @@ test('will update properly if a static value is replaced for a promise on curren
     </div>
   `);
 
-  assert.equal(this.$('.ui.radio').length, 3)
+  assert.equal(this.$('.ui.radio').length, 3);
   assert.equal(this.$('.ui.radio.checked').length, 1);
   assert.ok(this.$(this.$('.ui.radio')[1]).hasClass('checked'));
 
