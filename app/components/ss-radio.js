@@ -9,7 +9,7 @@ import PromiseResolver from 'ember-promise-tools/mixins/promise-resolver';
 
 export default Component.extend(PromiseResolver, {
   classNames: ['ui', 'checkbox', 'radio'],
-  classNameBindings: ['checked:checked', 'readonly:read-only'],
+  classNameBindings: ['checked:checked', 'readonly:read-only', 'disabled:disabled'],
 
   init() {
     this._super(...arguments);
