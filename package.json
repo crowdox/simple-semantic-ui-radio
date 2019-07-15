@@ -4,6 +4,6 @@
     "ember-addon"
   ],
   "dependencies": {
-    "ember-promise-tools": "^1.0.0"
+    "ember-promise-tools": "^1.1.0"
   }
 }
