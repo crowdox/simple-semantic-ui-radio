@@ -1,7 +1,6 @@
 import { computed } from '@ember/object';
 import { isBlank } from '@ember/utils';
 import Component from '@ember/component';
-import Ember from 'ember';
 import isPromise from 'ember-promise-tools/utils/is-promise';
 import isFulfilled from 'ember-promise-tools/utils/is-fulfilled';
 import getPromiseContent from 'ember-promise-tools/utils/get-promise-content';
@@ -16,7 +15,9 @@ export default Component.extend(PromiseResolver, {
 
     if (isBlank(this.get('name'))) {
       this.set('name', 'default');
-      Ember.Logger.warn("The required component parameter of 'name' was not passed into the ss-radio component");
+      if (window.console != null && window.console.warn != null) {
+        window.console.warn("The required component parameter of 'name' was not passed into the ss-radio component");
+      }
     }
   },
 
