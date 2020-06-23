@@ -3,7 +3,7 @@
        disabled={{if disabled "disabled"}}
        class="hidden"
        checked={{if checked "checked"}} />
-{{#if hasBlock}}
+{{#if (has-block)}}
   {{yield}}
 {{else}}
   <label></label>
